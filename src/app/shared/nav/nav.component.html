@@ -1,1 +1,41 @@
-<p>nav works!</p>
+<ul class="tabs">
+
+  <li class="tab">
+    <input class="radioClass" type="radio" name="tabs" id="tab1" (change)="routeTo($event)" value="assets" />
+    <label for="tab1">
+      <mat-icon>monetization_on</mat-icon>
+    </label>
+    <div class="indicator"></div>
+  </li>
+
+  <li class="tab">
+    <input class="radioClass" type="radio" name="tabs" id="tab2" (change)="routeTo($event)" value="income" />
+    <label for="tab2">
+      <mat-icon>local_atm</mat-icon>
+    </label>
+    <div class="indicator"></div>
+  </li>
+
+  <li class="tab">
+    <input class="radioClass" type="radio" name="tabs" checked id="tab3" (change)="routeTo($event)" value="" />
+    <label for="tab3">
+      <mat-icon>assessment</mat-icon>
+    </label>
+    <div class="indicator"></div>
+  </li>
+  <li class="tab">
+    <input class="radioClass" type="radio" name="tabs" id="tab4" (change)="routeTo($event)" value="expense" />
+    <label for="tab4">
+      <mat-icon>shop</mat-icon>
+    </label>
+    <div class="indicator"></div>
+  </li>
+  <li class="tab">
+    <input class="radioClass" type="radio" name="tabs" id="tab5" (change)="routeTo($event)" value="liabilities" />
+    <label for="tab5">
+      <mat-icon>point_of_sale</mat-icon>
+    </label>
+    <div class="indicator"></div>
+  </li>
+
+</ul>
