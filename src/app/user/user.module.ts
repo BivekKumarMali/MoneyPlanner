@@ -4,6 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user.component';
+import { MaterialModule } from '../material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +14,9 @@ import { UserComponent } from './user.component';
   declarations: [LoginComponent, RegisterComponent, UserComponent],
   imports: [
     CommonModule,
-
+    FlexLayoutModule,
+    MaterialModule,
+    FormsModule,
     RouterModule.forChild([
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },

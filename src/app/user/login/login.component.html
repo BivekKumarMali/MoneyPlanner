@@ -1,1 +1,16 @@
-<p>login works!</p>
+<h2 fxLayoutAlign="center center">Login</h2>
+<form fxLayout="column" fxLayoutAlign="center center" #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayoutGap="10px">
+  <mat-form-field>
+    <input type="email" matInput placeholder="Your Email" ngModel name="email" email required #emailInput="ngModel">
+    <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+    <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field hintLabel="Should be atleast 6 characters">
+    <input type="password" matInput placeholder="Your Pasword" ngModel name="password" required minlength="6"
+      #pwInput="ngModel">
+    <mat-hint align="end" *ngIf="pwInput.value">{{pwInput.value.length}} / 6</mat-hint>
+    <mat-error *ngIf="pwInput.hasError('required')">Has to atleast 6 character</mat-error>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Login</button>
+  <a [routerLink]="['/register']">Register</a>
+</form>
