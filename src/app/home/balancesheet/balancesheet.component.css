@@ -1,0 +1,6 @@
+* {
+  margin-top: 25px;
+}
+mat-card-title {
+  min-width: 120px;
+}

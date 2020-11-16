@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
 import { BalancesheetComponent } from './balancesheet/balancesheet.component';
 import { LiabilityComponent } from './liability/liability.component';
 import { SharedModule } from '../shared/shared.module';
+import { MaterialModule } from '../material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -25,7 +27,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-
+    MaterialModule,
+    FlexLayoutModule,
     RouterModule.forChild([
       { path: '', component: BalancesheetComponent },
       { path: 'expense', component: ExpenseComponent },

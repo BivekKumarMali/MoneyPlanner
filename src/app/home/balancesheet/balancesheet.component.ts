@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BalancesheetComponent implements OnInit {
 
+  goalAmount = 0;
+  netAssets = 0;
+  progressPercentage: number;
   constructor() { }
 
   ngOnInit(): void {
+    this.calculateGoalProgress();
+  }
+  calculateGoalProgress() {
+    this.progressPercentage = this.netAssets / this.goalAmount * 100;
   }
 
 }
