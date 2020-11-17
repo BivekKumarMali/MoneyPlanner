@@ -1,6 +1,31 @@
-* {
-  margin-top: 25px;
+.balancesheet {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+mat-card {
+  margin: 0 10px 10px 10px;
 }
 mat-card-title {
   min-width: 120px;
+}
+
+.card-header p {
+  margin: 10px 10px 0 0;
+
+  font-size: 13px;
+}
+
+.card-header mat-icon,
+mat-option,
+mat-card-content {
+  margin: 0;
+}
+mat-progress-bar {
+  height: 10px;
+}
+mat-list-item {
+  margin: 0;
+}
+.form {
+  z-index: 7;
 }

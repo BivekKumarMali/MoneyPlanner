@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header fxLayout="row">
+    <mat-form-field>
+      <mat-select [(value)]="section">
+        <mat-option [value]="item" *ngFor="let item of sections; index as i">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-header>
+  <mat-card-content>
+    <form fxLayout="column" fxLayoutAlign="center center" #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayoutGap="10px">
+      <mat-form-field>
+        <input type="text" matInput placeholder="Name" ngModel name="name" required #name="ngModel">
+        <mat-error *ngIf="name.hasError('required')">Field must not be empty</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Amount" ngModel name="amount" required #amount="ngModel">
+        <mat-error *ngIf="amount.value === 0">Amount cant be zero</mat-error>
+        <mat-error *ngIf="amount.hasError('required')">Cant be empty</mat-error>
+      </mat-form-field>
+
+      <mat-checkbox ngModel name="agree">Every month</mat-checkbox>
+      <div fxLayoutGap="50px">
+        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Add {{section}}</button>
+        <button type="reset" mat-raised-button color="warn" (click)="hideOverlay()">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
