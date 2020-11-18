@@ -1,6 +1,6 @@
 export interface Expense {
   name: string;
-  timestamp: string;
+  timestamp: Date;
   amount: number;
   isregular: boolean;
 }

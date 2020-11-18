@@ -18,6 +18,14 @@
         <mat-error *ngIf="amount.hasError('required')">Cant be empty</mat-error>
       </mat-form-field>
 
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" name="date" #date="ngModel" ngModel>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+
       <mat-checkbox ngModel name="agree">Every month</mat-checkbox>
       <div fxLayoutGap="50px">
         <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Add {{section}}</button>

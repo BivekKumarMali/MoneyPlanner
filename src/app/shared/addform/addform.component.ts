@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AddformComponent implements OnInit {
 
   sections = ['Asset', 'Expense', 'Income', 'Libality'];
+  startDate: Date;
   @Input() section: string;
   @Output() hideForm = new EventEmitter();
 
@@ -16,8 +17,15 @@ export class AddformComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  formatDate() {
+    this.startDate = new Date();
+  }
 
   onSubmit(form: NgForm) {
+    console.log(form.value);
+    console.log(this.startDate);
+
+
   }
   hideOverlay() {
     this.hideForm.emit('');

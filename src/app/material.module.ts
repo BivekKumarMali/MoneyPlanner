@@ -8,6 +8,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -22,7 +26,11 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatProgressBarModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatButtonToggleModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatIconModule,
@@ -33,7 +41,11 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatProgressBarModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatButtonToggleModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class MaterialModule { }

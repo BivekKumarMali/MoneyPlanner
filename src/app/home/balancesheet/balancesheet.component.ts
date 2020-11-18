@@ -11,6 +11,7 @@ import { Libality } from 'src/app/models/libality';
 })
 export class BalancesheetComponent implements OnInit {
 
+  displayedColumns: string[] = ['name', 'amount'];
   section: string;
   goalAmount = 0;
   netAssets = 0;
@@ -25,6 +26,10 @@ export class BalancesheetComponent implements OnInit {
   listOfAsset: Asset[];
   listOfLibality: Libality[];
   showOverlay = '';
+  displayExpense: boolean;
+  displayIncome: boolean;
+  displayAsset: boolean;
+  displayLibality: boolean;
 
   constructor() { }
 

@@ -1,6 +1,6 @@
 export interface Libality {
   name: string;
-  timestamp: string;
+  timestamp: Date;
   amount: number;
   isregular: boolean;
 }

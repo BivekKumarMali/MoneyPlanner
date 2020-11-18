@@ -1,6 +1,5 @@
 .balancesheet {
   margin-top: 45px;
-  margin-bottom: 45px;
 }
 mat-card {
   margin: 0 10px 10px 10px;
@@ -28,4 +27,12 @@ mat-list-item {
 }
 .form {
   z-index: 7;
+}
+.rightBold {
+  font-weight: 500;
+  margin-right: 5px;
+}
+.leftBold {
+  font-weight: 500;
+  margin-left: 5px;
 }

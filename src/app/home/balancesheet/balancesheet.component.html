@@ -26,7 +26,13 @@
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-header>
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
+      <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle [hidden]="!displayExpense" (click)="displayExpense = false">Show</mat-button-toggle>
+          <mat-button-toggle [hidden]="displayExpense" (click)="displayExpense = true">Hide</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
       <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
         <p>Expenses</p>
         <button mat-mini-fab color="primary" (click)="showForm('Expense')">
@@ -35,14 +41,22 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-list>
-        <mat-list-item *ngFor="let item of listOfExpense">{{item.name}}:{{item.amount}} at {{item.timestamp}}
+      <mat-list *ngIf="!displayExpense">
+        <mat-list-item *ngFor="let item of listOfExpense"><span class="rightBold">{{item.name}}:
+            {{item.amount}} </span><span> at</span>
+          <span class="leftBold"> {{item.timestamp}}</span>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-header>
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
+      <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle [hidden]="!displayIncome" (click)="displayIncome = false">Show</mat-button-toggle>
+          <mat-button-toggle [hidden]="displayIncome" (click)="displayIncome = true">Hide</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
       <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
         <p>Incomes</p>
         <button mat-mini-fab color="primary" (click)="showForm('Income')">
@@ -50,15 +64,23 @@
         </button>
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content *ngIf="displayIncome">
       <mat-list>
-        <mat-list-item *ngFor="let item of listOfIncome">{{item.name}}:{{item.amount}}
+        <mat-list-item *ngFor="let item of listOfIncome"><span class="rightBold">{{item.name}}:
+            {{item.amount}} </span>
+          <span class="leftBold"> {{item.timestamp}}</span>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-header>
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
+      <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle [hidden]="!displayAsset" (click)="displayAsset = false">Show</mat-button-toggle>
+          <mat-button-toggle [hidden]="displayAsset" (click)="displayAsset = true">Hide</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
       <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
         <p>Assets</p>
         <button mat-mini-fab color="primary" (click)="showForm('Asset')">
@@ -66,15 +88,22 @@
         </button>
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content *ngIf="displayAsset">
       <mat-list>
-        <mat-list-item *ngFor="let item of listOfAsset">{{item.name}}:{{item.amount}}
+        <mat-list-item *ngFor="let item of listOfAsset"><span class="rightBold">{{item.name}}:
+            {{item.amount}} </span>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-header>
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
+      <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle [hidden]="!displayLibality" (click)="displayLibality = false">Show</mat-button-toggle>
+          <mat-button-toggle [hidden]="displayLibality" (click)="displayLibality = true">Hide</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
       <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
         <p>Libalities</p>
         <button mat-mini-fab color="primary" (click)="showForm('Libality')">
@@ -82,9 +111,11 @@
         </button>
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content *ngIf="displayLibality">
       <mat-list>
-        <mat-list-item *ngFor="let item of listOfLibality">{{item.name}}:{{item.amount}} at {{item.timestamp}}
+        <mat-list-item *ngFor="let item of listOfLibality"><span class="rightBold">{{item.name}}:
+            {{item.amount}} </span><span> at</span>
+          <span class="leftBold"> {{item.timestamp}}</span>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
