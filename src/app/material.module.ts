@@ -13,39 +13,29 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
-
+const material = [
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatCardModule,
+  MatProgressBarModule,
+  MatSelectModule,
+  MatListModule,
+  MatButtonToggleModule,
+  MatTableModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+];
 
 @NgModule({
   declarations: [],
   imports: [
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatProgressBarModule,
-    MatSelectModule,
-    MatListModule,
-    MatButtonToggleModule,
-    MatTableModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    ...material
   ],
   exports: [
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatProgressBarModule,
-    MatSelectModule,
-    MatListModule,
-    MatButtonToggleModule,
-    MatTableModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    ...material
   ]
 })
 export class MaterialModule { }
