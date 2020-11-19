@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   --primary-color: #6a1b9a;
+  --grey-color: #8f8f8f;
   --black-color: black;
   --white-color: white;
-  --dark-primary-color: #9c27b0;
+  --pale-primary-color: #b64dc9;
   --minimal-color: #b8b8b8;
-  --success-color: #4bc50d;
-  --alert-color: #ea5455;
+  --success-color: #5beb13;
+  --alert-color: #f84848;
   --minimal-color-2: #88dde0;
 }
 

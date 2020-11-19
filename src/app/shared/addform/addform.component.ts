@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AddformComponent implements OnInit {
 
   sections = ['Asset', 'Expense', 'Income', 'Libality'];
+  listOfCategories = ['Necessity', 'Impulse', 'Luxury', 'Investment', 'Others'];
   startDate: Date;
   @Input() section: string;
   @Output() hideForm = new EventEmitter();

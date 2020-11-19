@@ -1,76 +1,41 @@
-.tabs .tab {
-  overflow: hidden;
-  width: 100%;
-  margin: 0;
+img {
+  width: 50px;
+  height: 50px;
 }
 
-.tabs .tab .radioClass {
-  display: none;
-}
-.tabs .content {
-  position: absolute;
-  opacity: 0;
-  top: -70vh;
-  bottom: 0vh;
-  left: 30vw;
-  width: 45vw;
-  height: 65vh;
-  box-shadow: 2px 4px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.tabs > .tab .radioClass:checked ~ .content {
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-/*====================================================
-     Fixing tabs menu to bottom
-=====================================================*/
-.tabs {
+.header {
+  overflow: hidden;
   position: fixed;
-  bottom: 0;
+  top: 0;
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  z-index: 1;
+  height: 50px;
+  box-shadow: 1px 13px 78px -14px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 1px 13px 78px -14px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 1px 13px 78px -14px rgba(0, 0, 0, 0.43);
+}
+
+ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  box-shadow: 0px 0px 5px 0px var(--black-color);
-}
-
-/*====================================================
-     Desigining the tabs menu
-=====================================================*/
-.tabs .tab label {
-  display: block;
-  text-align: center;
-  padding: 4vh 4vw 4vh 4vh;
-  cursor: pointer;
-  font-size: 1em;
-  color: var(--white-color);
+  overflow: hidden;
   background-color: var(--primary-color);
 }
 
-/*====================================================
-     Adding the hover effect
-=====================================================*/
+li {
+  float: left;
+  margin-right: 10px;
+}
 
-.tabs .tab label:hover {
-  background-color: var(--dark-primary-color);
-  color: var(--black-color);
-  transition: all 0.3s ease;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
-/*====================================================
-     Adding the selection indicator
-=====================================================*/
-.indicator {
-  position: absolute;
-  bottom: 0px;
-  width: 0px;
-  height: 4px;
-  background: var(--black-color);
-}
-.tabs > .tab .radioClass:checked ~ .indicator {
-  width: 20vw;
-  transition: width 400ms ease;
-}
-.tabs > .tab .radioClass:checked + label {
-  color: var(--black-color);
+mat-icon {
+  color: var(--white-color);
+  cursor: pointer;
 }

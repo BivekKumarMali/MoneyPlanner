@@ -1,107 +1,61 @@
 <div class="balancesheet">
-  <div class="setup" fxLayout="row" fxLayoutAlign="space-between start">
-    <mat-form-field fxLayout="column" fxLayoutAlign="none end">
-      <mat-select [(value)]="filterMonth" (selectionChange)="getValue()">
-        <mat-option [value]="i" *ngFor="let item of listOfMonths; index as i">{{item}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field fxLayout="column" fxLayoutAlign="none end">
-      <mat-select [(value)]="filterYear" (selectionChange)="getValue()">
-        <mat-option [value]="item" *ngFor="let item of listOfYear; index as i">{{item}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <mat-card>
+  <app-filter (Filter)="NewFilter($event)"></app-filter>
+  <mat-card class="goal">
     <mat-card-header>
-      <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
+      <mat-card-title class="goal-header" fxLayout="row" fxLayoutAlign="space-between none">
         <p>Goals</p>
-        <button mat-mini-fab color="primary">
+        <button mat-mini-fab color="black">
           <mat-icon>edit</mat-icon>
         </button>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div dir="rtl" fxLayoutGap="20px"><span>{{netAssets}}/{{goalAmount}}</span> </div>
-      <mat-progress-bar mode="determinate" [value]="progressPercentage"></mat-progress-bar>
+      <mat-progress-bar mode="determinate" [value]="progressPercentage" color="accent"></mat-progress-bar>
     </mat-card-content>
   </mat-card>
-  <mat-card>
+  <div fxLayout="row" fxLayoutAlign="space-around start" class="section">
+    <mat-card [routerLink]="['/income']">
+      <mat-card-header class="in">
+        <span>Income</span>
+      </mat-card-header>
+      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+        <p class="amount">5000</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header class="out">
+        <span>Expense</span>
+      </mat-card-header>
+      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+        <p class="amount">5000</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-around start" class="section">
+    <mat-card>
+      <mat-card-header class="in">
+        <span>Assets</span>
+      </mat-card-header>
+      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+        <p class="amount">5000</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header class="out">
+        <span>Libalities</span>
+      </mat-card-header>
+      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+        <p class="amount">5000</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- <mat-card>
     <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
       <div>
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle [hidden]="!displayExpense" (click)="displayExpense = false">Show</mat-button-toggle>
-          <mat-button-toggle [hidden]="displayExpense" (click)="displayExpense = true">Hide</mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-      <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
-        <p>Expenses</p>
-        <button mat-mini-fab color="primary" (click)="showForm('Expense')">
-          <mat-icon>add</mat-icon>
-        </button>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-list *ngIf="!displayExpense">
-        <mat-list-item *ngFor="let item of listOfExpense"><span class="rightBold">{{item.name}}:
-            {{item.amount}} </span><span> at</span>
-          <span class="leftBold"> {{item.timestamp}}</span>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
-      <div>
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle [hidden]="!displayIncome" (click)="displayIncome = false">Show</mat-button-toggle>
-          <mat-button-toggle [hidden]="displayIncome" (click)="displayIncome = true">Hide</mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-      <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
-        <p>Incomes</p>
-        <button mat-mini-fab color="primary" (click)="showForm('Income')">
-          <mat-icon>add</mat-icon>
-        </button>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content *ngIf="displayIncome">
-      <mat-list>
-        <mat-list-item *ngFor="let item of listOfIncome"><span class="rightBold">{{item.name}}:
-            {{item.amount}} </span>
-          <span class="leftBold"> {{item.timestamp}}</span>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
-      <div>
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle [hidden]="!displayAsset" (click)="displayAsset = false">Show</mat-button-toggle>
-          <mat-button-toggle [hidden]="displayAsset" (click)="displayAsset = true">Hide</mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-      <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
-        <p>Assets</p>
-        <button mat-mini-fab color="primary" (click)="showForm('Asset')">
-          <mat-icon>add</mat-icon>
-        </button>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content *ngIf="displayAsset">
-      <mat-list>
-        <mat-list-item *ngFor="let item of listOfAsset"><span class="rightBold">{{item.name}}:
-            {{item.amount}} </span>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
-      <div>
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle [hidden]="!displayLibality" (click)="displayLibality = false">Show</mat-button-toggle>
-          <mat-button-toggle [hidden]="displayLibality" (click)="displayLibality = true">Hide</mat-button-toggle>
+          <mat-button-toggle [hidden]="!displayLibality" (click)="displayLibality = false">Hide</mat-button-toggle>
+          <mat-button-toggle [hidden]="displayLibality" (click)="displayLibality = true">Show</mat-button-toggle>
         </mat-button-toggle-group>
       </div>
       <mat-card-title class="card-header" fxLayout="row" fxLayoutAlign="space-between none">
@@ -121,8 +75,4 @@
     </mat-card-content>
   </mat-card>
 </div>
-<div class="overlay" fxLayout="column" fxLayoutAlign="center" [ngClass]="showOverlay">
-  <div class="form">
-    <app-addform [section]="section" (hideForm)=hideForm()></app-addform>
-  </div>
-</div>
+-->

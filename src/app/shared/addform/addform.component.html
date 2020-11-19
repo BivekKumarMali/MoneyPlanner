@@ -18,6 +18,11 @@
         <mat-error *ngIf="amount.hasError('required')">Cant be empty</mat-error>
       </mat-form-field>
 
+      <mat-form-field fxLayout="column" fxLayoutAlign="none end" *ngIf="section === 'Expense'">
+        <mat-select name="category" #category="ngModel" ngModel>
+          <mat-option [value]="i" *ngFor="let item of listOfCategories; index as i">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Choose a date</mat-label>
         <input matInput [matDatepicker]="picker" name="date" #date="ngModel" ngModel>
