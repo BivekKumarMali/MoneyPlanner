@@ -1,0 +1,17 @@
+.setup{
+  width: 100%;
+}
+a{
+  float: right;
+  margin-top: 10px;
+}
+
+.select-section{
+  padding: 15px 15px 15px 15px;
+  display: flex;
+  justify-content: space-around;
+  transition: ease-in 1s all;
+}
+select{
+  width: 40%;
+}

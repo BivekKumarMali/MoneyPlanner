@@ -1,14 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
 * {
-  --primary-color: #6a1b9a;
-  --grey-color: #8f8f8f;
+  --primary-color: #00a6a4;
+  --pale-primary-color: #01ca7a;
+  --secondary-color: #f6f6f8;
+  --minimal-color: #ff8000;
   --black-color: black;
   --white-color: white;
-  --pale-primary-color: #b64dc9;
-  --minimal-color: #b8b8b8;
-  --success-color: #5beb13;
-  --alert-color: #f84848;
-  --minimal-color-2: #88dde0;
+  --alter-primary-color: #ffffff;
+  --success-color: #b6ffcc;
+  --alert-color: #f89e9e;
 }
 
 html,
@@ -34,4 +37,22 @@ body {
 .showOverlay {
   z-index: 2;
   opacity: 1;
+}
+.nav-setup {
+  margin-top: 55px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-color);
+  margin: 5px 5px 5px 5px;
+  padding: 15px;
+}
+.card-color {
+  background: rgb(60, 203, 211);
+  background: linear-gradient(
+    117deg,
+    rgba(60, 203, 211, 1) 0%,
+    rgba(33, 202, 173, 1) 47%,
+    rgba(1, 202, 122, 1) 100%
+  );
 }

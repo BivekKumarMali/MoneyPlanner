@@ -1,11 +1,8 @@
-.balancesheet {
-  margin-top: 45px;
-}
 mat-card {
   margin: 0 10px 10px 10px;
 }
 .goal {
-  background-color: var(--grey-color);
+  background-color: var(--secondary-color);
   border-radius: 0;
 }
 .goal mat-card-title {
@@ -49,4 +46,19 @@ button {
 }
 .section mat-card:hover {
   background-color: var(--pale-primary-color);
+}
+
+.header {
+  display: flex;
+}
+.header p {
+  font-size: large;
+  font-weight: bold;
+  margin: 10px;
+}
+.context {
+  margin-top: 20px;
+}
+.context span {
+  font-size: medium;
 }

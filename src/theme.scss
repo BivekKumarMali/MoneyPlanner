@@ -1,9 +1,112 @@
 @import "~@angular/material/theming";
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-purple, 800, A100);
-$my-app-accent: mat-palette($mat-grey, 300);
-$my-app-warn: mat-palette($mat-red, 500);
+/* For use in src/lib/core/theming/_palette.scss */
+$md-primary: (
+    50 : #e0f4f4,
+    100 : #b3e4e4,
+    200 : #80d3d2,
+    300 : #4dc1bf,
+    400 : #26b3b2,
+    500 : #00a6a4,
+    600 : #009e9c,
+    700 : #009592,
+    800 : #008b89,
+    900 : #007b78,
+    A100 : #a8fffd,
+    A200 : #75fffb,
+    A400 : #42fffa,
+    A700 : #29fff9,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-accent: (
+    50 : #fefefe,
+    100 : #fcfcfd,
+    200 : #fbfbfc,
+    300 : #f9f9fa,
+    400 : #f7f7f9,
+    500 : #f6f6f8,
+    600 : #f5f5f7,
+    700 : #f3f3f6,
+    800 : #f2f2f5,
+    900 : #efeff3,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-warn: (
+    50 : #fff0e0,
+    100 : #ffd9b3,
+    200 : #ffc080,
+    300 : #ffa64d,
+    400 : #ff9326,
+    500 : #ff8000,
+    600 : #ff7800,
+    700 : #ff6d00,
+    800 : #ff6300,
+    900 : #ff5000,
+    A100 : #ffffff,
+    A200 : #fff5f2,
+    A400 : #ffcfbf,
+    A700 : #ffbca6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$my-app-primary: mat-palette($md-primary, 500);
+$my-app-accent: mat-palette($md-accent, 500);
+$my-app-warn: mat-palette($md-warn, 500);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 @include angular-material-theme($my-app-theme);
 .alternate-theme {

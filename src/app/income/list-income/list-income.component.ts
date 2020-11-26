@@ -12,4 +12,9 @@ export class ListIncomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  NewFilter(filter: string) {
+    const filters = filter.split(' ');
+    console.log(filters);
+  }
 }

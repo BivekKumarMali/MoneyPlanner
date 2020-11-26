@@ -12,6 +12,7 @@ export class FilterComponent implements OnInit {
   listOfYear = [];
   filterMonth = new Date().getMonth();
   filterYear = new Date().getFullYear();
+  showSelect: boolean;
 
   @Output() Filter = new EventEmitter();
 

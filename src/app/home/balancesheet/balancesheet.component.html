@@ -1,25 +1,38 @@
-<div class="balancesheet">
-  <app-filter (Filter)="NewFilter($event)"></app-filter>
-  <mat-card class="goal">
-    <mat-card-header>
-      <mat-card-title class="goal-header" fxLayout="row" fxLayoutAlign="space-between none">
-        <p>Goals</p>
-        <button mat-mini-fab color="black">
-          <mat-icon>edit</mat-icon>
-        </button>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div dir="rtl" fxLayoutGap="20px"><span>{{netAssets}}/{{goalAmount}}</span> </div>
-      <mat-progress-bar mode="determinate" [value]="progressPercentage" color="accent"></mat-progress-bar>
-    </mat-card-content>
-  </mat-card>
+<div>
+  <div class="column">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <p>Goals</p>
+            <button class="btn" mat-mini-fab color="warn">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div class="context">
+            <div class="float-right">
+              <span>{{ netAssets }}/{{ goalAmount }}</span>
+            </div>
+            <mat-progress-bar
+              mode="determinate"
+              [value]="progressPercentage"
+              color="primary"
+            ></mat-progress-bar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div fxLayout="row" fxLayoutAlign="space-around start" class="section">
     <mat-card [routerLink]="['/income']">
       <mat-card-header class="in">
         <span>Income</span>
       </mat-card-header>
-      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+      <mat-card-content
+        fxLayout="row"
+        fxLayoutAlign="end none"
+        class="section-content"
+      >
         <p class="amount">5000</p>
       </mat-card-content>
     </mat-card>
@@ -27,7 +40,11 @@
       <mat-card-header class="out">
         <span>Expense</span>
       </mat-card-header>
-      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+      <mat-card-content
+        fxLayout="row"
+        fxLayoutAlign="end none"
+        class="section-content"
+      >
         <p class="amount">5000</p>
       </mat-card-content>
     </mat-card>
@@ -37,7 +54,11 @@
       <mat-card-header class="in">
         <span>Assets</span>
       </mat-card-header>
-      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+      <mat-card-content
+        fxLayout="row"
+        fxLayoutAlign="end none"
+        class="section-content"
+      >
         <p class="amount">5000</p>
       </mat-card-content>
     </mat-card>
@@ -45,11 +66,33 @@
       <mat-card-header class="out">
         <span>Libalities</span>
       </mat-card-header>
-      <mat-card-content fxLayout="row" fxLayoutAlign="end none" class="section-content">
+      <mat-card-content
+        fxLayout="row"
+        fxLayoutAlign="end none"
+        class="section-content"
+      >
         <p class="amount">5000</p>
       </mat-card-content>
     </mat-card>
   </div>
+
+  <div class="column">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card-color"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-color"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-color"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-color"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- <mat-card>
     <mat-card-header fxLayout="row" fxLayoutAlign="space-between none">
       <div>
@@ -75,4 +118,4 @@
     </mat-card-content>
   </mat-card>
 </div>
--->
+--></div>
