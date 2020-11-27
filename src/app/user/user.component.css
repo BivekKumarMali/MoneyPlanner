@@ -1,6 +1,49 @@
 section {
   height: 100vh;
 }
-mat-card {
-  margin: 10px;
+.card {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+}
+img {
+  width: 140px;
+  padding: 5px;
+  height: 50px;
+}
+.header {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: 50px;
+  box-shadow: 1px 13px 78px -14px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 1px 13px 78px -14px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 1px 13px 78px -14px rgba(0, 0, 0, 0.43);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--primary-color);
+}
+
+li {
+  float: left;
+  margin-right: 10px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+mat-icon {
+  color: var(--white-color);
+  cursor: pointer;
 }
