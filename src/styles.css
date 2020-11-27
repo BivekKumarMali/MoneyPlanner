@@ -42,7 +42,7 @@ body {
   opacity: 1;
 }
 .nav-setup {
-  margin-top: 55px;
+  padding-top: 55px;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -69,4 +69,9 @@ body {
     rgba(0, 240, 172, 1) 0%,
     rgba(62, 200, 205, 1) 100%
   );
+}
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

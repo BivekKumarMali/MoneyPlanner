@@ -1,12 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Asset } from 'src/app/models/asset';
-import { Expense } from 'src/app/models/expense';
-import { Income } from 'src/app/models/income';
-import { Libality } from 'src/app/models/libality';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { ExpenseService } from 'src/app/core/api/expense/expense.service';
-import { map } from 'rxjs/operators';
 
 
 @Component({

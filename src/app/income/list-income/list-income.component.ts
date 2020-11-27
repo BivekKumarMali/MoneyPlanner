@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IncomeDto } from 'src/app/interface/Dto/incomeDto';
 
 @Component({
   selector: 'app-list-income',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-income.component.css']
 })
 export class ListIncomeComponent implements OnInit {
+
+  listIncome: IncomeDto[];
 
   constructor() { }
 

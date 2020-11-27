@@ -1,6 +1,8 @@
 export interface Income {
-  name: string;
+  id: string;
+  source: string;
   amount: number;
+  month: number;
+  date: Date;
   isregular: boolean;
-  timestamp: Date;
 }

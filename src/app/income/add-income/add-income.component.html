@@ -1,1 +1,63 @@
-<p>add-income works!</p>
+<section fxLayout="column" fxLayoutAlign="center">
+  <button mat-icon-button class="btn" [routerLink]="['/income']">
+    <mat-icon>arrow_back_ios</mat-icon> <span>Go Back</span>
+  </button>
+  <div class="card">
+    <h2 fxLayoutAlign="none center">Add Income</h2>
+    <form
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      #form="ngForm"
+      (ngSubmit)="onSubmit(form)"
+    >
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="Source Of Income"
+          ngModel
+          name="source"
+          required
+          #sourceInput="ngModel"
+        />
+        <mat-error *ngIf="sourceInput.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          placeholder="Your Income"
+          ngModel
+          name="amount"
+          required
+          #amountInput="ngModel"
+        />
+        <mat-error *ngIf="amountInput.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="dp" [(value)]="date" name="date" />
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+
+      <mat-checkbox ngModel name="isRegular" color="primary">
+        Regular Base Income
+      </mat-checkbox>
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="form.invalid"
+      >
+        Add Income
+      </button>
+    </form>
+  </div>
+</section>
