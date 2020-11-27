@@ -1,7 +1,7 @@
 <h2 fxLayoutAlign="center center">Register</h2>
 <form
   fxLayout="column"
-  fxLayoutAlign="center"
+  fxLayoutAlign="center center"
   #form="ngForm"
   (ngSubmit)="onSubmit(form)"
   fxLayoutGap="10px"
@@ -49,16 +49,17 @@
       minlength="6"
       #pwInput="ngModel"
     />
-    <mat-hint align="end" *ngIf="pwInput.value"
-      >{{ pwInput.value.length }} / 6</mat-hint
-    >
-    <mat-error *ngIf="pwInput.hasError('required')"
-      >Has to atleast 6 character</mat-error
-    >
+    <mat-hint align="end" *ngIf="pwInput.value">
+      {{ pwInput.value.length }} / 6
+    </mat-hint>
+    <mat-error *ngIf="pwInput.hasError('required')">
+      Has to atleast 6 character
+    </mat-error>
   </mat-form-field>
-  <mat-checkbox ngModel name="agree" required
-    >Agree to terms and conditions</mat-checkbox
-  >
+  <mat-checkbox ngModel name="agree" required>
+    Agree to terms and conditions
+  </mat-checkbox>
+
   <button
     type="submit"
     mat-raised-button

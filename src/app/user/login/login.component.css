@@ -1,7 +1,12 @@
 h2 {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 a {
-  margin: 0 auto;
   color: var(--primary-color);
+}
+mat-form-field {
+  width: 300px;
+}
+button {
+  width: 100px;
 }

@@ -1,7 +1,7 @@
 <h2 fxLayoutAlign="center center">Login</h2>
 <form
   fxLayout="column"
-  fxLayoutAlign="center"
+  fxLayoutAlign="center center"
   #form="ngForm"
   (ngSubmit)="onSubmit(form)"
   fxLayoutGap="10px"
@@ -17,12 +17,12 @@
       required
       #emailInput="ngModel"
     />
-    <mat-error *ngIf="emailInput.hasError('required')"
-      >Field must not be empty</mat-error
-    >
-    <mat-error *ngIf="!emailInput.hasError('required')"
-      >Email is invalid</mat-error
-    >
+    <mat-error *ngIf="emailInput.hasError('required')">
+      Field must not be empty
+    </mat-error>
+    <mat-error *ngIf="!emailInput.hasError('required')">
+      Email is invalid
+    </mat-error>
   </mat-form-field>
   <mat-form-field hintLabel="Should be atleast 6 characters">
     <input
@@ -35,12 +35,12 @@
       minlength="6"
       #pwInput="ngModel"
     />
-    <mat-hint align="end" *ngIf="pwInput.value"
-      >{{ pwInput.value.length }} / 6</mat-hint
-    >
-    <mat-error *ngIf="pwInput.hasError('required')"
-      >Has to atleast 6 character</mat-error
-    >
+    <mat-hint align="end" *ngIf="pwInput.value">
+      {{ pwInput.value.length }} / 6
+    </mat-hint>
+    <mat-error *ngIf="pwInput.hasError('required')">
+      Has to atleast 6 character
+    </mat-error>
   </mat-form-field>
   <button
     type="submit"
@@ -50,5 +50,5 @@
   >
     Login
   </button>
-  <a [routerLink]="['/register']">Register</a>
+  <a [routerLink]="['/register']"> Register </a>
 </form>

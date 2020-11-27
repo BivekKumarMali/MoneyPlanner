@@ -1,11 +1,11 @@
 <nav class="header">
   <ul fxLayout="row" fxLayoutAlign="space-between center">
-    <li [routerLink]="['/home']"><img src="../../assets/logo.png"></li>
+    <li [routerLink]="['/home']"><img src="../../assets/logo.png" /></li>
     <li>
-      <button mat-button color="accent">
+      <button class="btn" mat-icon-button color="accent">
         <mat-icon>insights</mat-icon>
       </button>
-      <button mat-button color="warn">
+      <button class="btn" mat-icon-button color="warn" (click)="Logout()">
         <mat-icon>login</mat-icon>
       </button>
     </li>

@@ -20,4 +20,8 @@ export class NavComponent implements OnInit {
     console.log(value);
     this.router.navigate(['/home/' + value]);
   }
+
+  Logout(){
+    this.router.navigate(['/login']);
+  }
 }

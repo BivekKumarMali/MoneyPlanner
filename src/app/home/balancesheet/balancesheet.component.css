@@ -1,53 +1,9 @@
 mat-card {
   margin: 0 10px 10px 10px;
 }
-.goal {
-  background-color: var(--secondary-color);
-  border-radius: 0;
-}
-.goal mat-card-title {
-  min-width: 120px;
-  color: var(--white-color);
-}
-.goal-header p {
-  margin: 10px 10px 0 0;
-  font-size: 20px;
-}
 mat-progress-bar {
   height: 10px;
 }
-button {
-  background-color: var(--black-color);
-  color: var(--white-color);
-}
-.section mat-card {
-  width: 90%;
-  background-color: var(--primary-color);
-  padding-left: 0;
-  transition: 0.5s all ease-in-out;
-  cursor: pointer;
-}
-.in span {
-  color: var(--success-color);
-  font-weight: 700;
-  font-size: 20px;
-}
-.out span {
-  color: var(--alert-color);
-  font-weight: 700;
-  font-size: 20px;
-}
-.amount {
-  color: var(--white-color);
-  font-size: 20px;
-}
-.section-content {
-  margin-top: 50px;
-}
-.section mat-card:hover {
-  background-color: var(--pale-primary-color);
-}
-
 .header {
   display: flex;
 }
@@ -56,9 +12,22 @@ button {
   font-weight: bold;
   margin: 10px;
 }
-.context {
-  margin-top: 20px;
+
+.context-header h2,
+.context-header p {
+  color: var(--white-color);
 }
-.context span {
-  font-size: medium;
+
+.amount {
+  float: right;
+  font-size: 20px;
+  font-weight: bolder;
+  color: black;
+}
+
+.context-header {
+  min-height: 150px;
+}
+.small-card {
+  cursor: pointer;
 }

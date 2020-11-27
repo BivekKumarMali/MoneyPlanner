@@ -23,72 +23,47 @@
       </div>
     </div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-around start" class="section">
-    <mat-card [routerLink]="['/income']">
-      <mat-card-header class="in">
-        <span>Income</span>
-      </mat-card-header>
-      <mat-card-content
-        fxLayout="row"
-        fxLayoutAlign="end none"
-        class="section-content"
-      >
-        <p class="amount">5000</p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card>
-      <mat-card-header class="out">
-        <span>Expense</span>
-      </mat-card-header>
-      <mat-card-content
-        fxLayout="row"
-        fxLayoutAlign="end none"
-        class="section-content"
-      >
-        <p class="amount">5000</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="space-around start" class="section">
-    <mat-card>
-      <mat-card-header class="in">
-        <span>Assets</span>
-      </mat-card-header>
-      <mat-card-content
-        fxLayout="row"
-        fxLayoutAlign="end none"
-        class="section-content"
-      >
-        <p class="amount">5000</p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card>
-      <mat-card-header class="out">
-        <span>Libalities</span>
-      </mat-card-header>
-      <mat-card-content
-        fxLayout="row"
-        fxLayoutAlign="end none"
-        class="section-content"
-      >
-        <p class="amount">5000</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
 
   <div class="column">
     <div class="row">
-      <div class="col-md-3">
-        <div class="card card-color"></div>
+      <div
+        class="col-md-3 col-sm-6 col-6 small-card"
+        [routerLink]="['/income']"
+      >
+        <div class="card card-color">
+          <div class="context-header">
+            <h2>Income</h2>
+            <p>Money received, especially on regular basis. Usually by work</p>
+            <span class="amount float-right">50000</span>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <div class="card card-color"></div>
+      <div class="col-md-3 col-sm-6 col-6 small-card">
+        <div class="card card-color">
+          <div class="context-header">
+            <h2>Expense</h2>
+            <p>Which one required to spend money on bills and others</p>
+            <span class="amount float-right">50000</span>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <div class="card card-color"></div>
+      <div class="col-md-3 col-sm-6 col-6 small-card">
+        <div class="card card-color">
+          <div class="context-header">
+            <h2>Assets</h2>
+            <p>Item owned by the person like saving, liquid cash and etc</p>
+            <span class="amount">50000</span>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <div class="card card-color"></div>
+      <div class="col-md-3 col-sm-6 col-6 small-card">
+        <div class="card card-color">
+          <div class="context-header">
+            <h2>Libalities</h2>
+            <p>Something a person owes, usually a effects assets</p>
+            <span class="amount float-right">50000</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

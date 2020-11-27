@@ -2,6 +2,8 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap");
+
 * {
   --primary-color: #00a6a4;
   --pale-primary-color: #01ca7a;
@@ -12,6 +14,7 @@
   --alter-primary-color: #ffffff;
   --success-color: #b6ffcc;
   --alert-color: #f89e9e;
+  font-family: "Quicksand", sans-serif;
 }
 
 html,
@@ -48,11 +51,22 @@ body {
   padding: 15px;
 }
 .card-color {
+  color: var(--white-color);
   background: rgb(60, 203, 211);
   background: linear-gradient(
     117deg,
     rgba(60, 203, 211, 1) 0%,
     rgba(33, 202, 173, 1) 47%,
     rgba(1, 202, 122, 1) 100%
+  );
+  transition: 0.75s ease-in-out all;
+}
+
+.card-color:hover {
+  background: rgb(62, 200, 205);
+  background: linear-gradient(
+    117deg,
+    rgba(0, 240, 172, 1) 0%,
+    rgba(62, 200, 205, 1) 100%
   );
 }
