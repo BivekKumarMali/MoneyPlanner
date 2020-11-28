@@ -1,0 +1,111 @@
+<section fxLayout="column" fxLayoutAlign="center">
+  <button mat-icon-button class="btn" [routerLink]="['/income']">
+    <mat-icon>arrow_back_ios</mat-icon> <span>Go Back</span>
+  </button>
+  <div class="card">
+    <h2 fxLayoutAlign="none center">Edit Expense</h2>
+    <form
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      #form="ngForm"
+      (ngSubmit)="onSubmit(form)"
+    >
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="Source Of Income"
+          ngModel
+          name="name"
+          required
+          #sourceInput="ngModel"
+          [ngModel]="expense.name"
+        />
+        <mat-error *ngIf="sourceInput.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          placeholder="Your Income"
+          ngModel
+          name="amount"
+          required
+          #amountInput="ngModel"
+          [ngModel]="expense.amount"
+        />
+        <mat-error *ngIf="amountInput.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select
+          #category="ngModel"
+          ngModel
+          required
+          [ngModel]="expense.category"
+          name="category"
+        >
+          <mat-option *ngFor="let item of categories" [value]="item">
+            {{ item }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="category.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>From</mat-label>
+        <mat-select
+          #source="ngModel"
+          ngModel
+          required
+          [ngModel]="expense.source"
+          name="source"
+        >
+          <mat-option *ngFor="let item of banks" [value]="item">
+            {{ item }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="source.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="dp"
+          [(ngModel)]="expense.date"
+          name="date"
+        />
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+
+      <mat-checkbox
+        ngModel
+        name="isRegular"
+        color="primary"
+        [ngModel]="expense.isregular"
+      >
+        Regular Base Expense
+      </mat-checkbox>
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="form.invalid"
+      >
+        Edit Expense
+      </button>
+    </form>
+  </div>
+</section>

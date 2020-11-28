@@ -6,28 +6,17 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { NavComponent } from './nav/nav.component';
-import { AddformComponent } from './addform/addform.component';
 import { FilterComponent } from './filter/filter.component';
 
-
-
 @NgModule({
-  declarations: [
-    NavComponent,
-    AddformComponent,
-    FilterComponent
-  ],
+  declarations: [NavComponent, FilterComponent],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
-  exports: [
-    NavComponent,
-    AddformComponent,
-    FilterComponent
-  ]
+  exports: [NavComponent, FilterComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

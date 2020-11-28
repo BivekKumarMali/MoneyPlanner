@@ -1,0 +1,87 @@
+<section fxLayout="column" fxLayoutAlign="center">
+  <button mat-icon-button class="btn" [routerLink]="['/expense']">
+    <mat-icon>arrow_back_ios</mat-icon> <span>Go Back</span>
+  </button>
+  <div class="card">
+    <h2 fxLayoutAlign="none center">Add Expense</h2>
+    <form
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      #form="ngForm"
+      (ngSubmit)="onSubmit(form)"
+    >
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="Expense Name"
+          ngModel
+          name="name"
+          required
+          #nameInput="ngModel"
+        />
+        <mat-error *ngIf="nameInput.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          placeholder="Your Income"
+          ngModel
+          name="amount"
+          required
+          #amountInput="ngModel"
+        />
+        <mat-error *ngIf="amountInput.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select name="category" #category="ngModel" ngModel required>
+          <mat-option *ngFor="let item of categories" [value]="item">
+            {{ item }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="category.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>From</mat-label>
+        <mat-select name="source" #source="ngModel" ngModel required>
+          <mat-option *ngFor="let item of banks" [value]="item">
+            {{ item }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="source.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="dp" [(value)]="date" name="date" />
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+
+      <mat-checkbox ngModel name="isRegular" color="primary">
+        Regular Base Expense
+      </mat-checkbox>
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="form.invalid"
+      >
+        Add Expense
+      </button>
+    </form>
+  </div>
+</section>

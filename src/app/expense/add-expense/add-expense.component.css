@@ -1,0 +1,17 @@
+h2 {
+  margin-top: 20px;
+}
+a {
+  color: var(--primary-color);
+}
+mat-form-field {
+  width: 300px;
+}
+button {
+  width: 100px;
+  padding-right: 90px;
+}
+.card {
+  margin: 0 auto;
+  width: 350px;
+}
