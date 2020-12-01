@@ -31,13 +31,15 @@ import { Income } from 'src/app/interface/models/income';
 })
 export class EditIncomeComponent implements OnInit {
   date = new Date();
-  Income: Income = {
+  banks = ['Axis', 'Paytm'];
+  income: Income = {
     amount: 16309,
     date: new Date(),
     id: 'trest',
     month: 11,
-    source: 'Promact',
+    name: 'Promact',
     isregular: true,
+    too: 'Axis',
   };
 
   constructor(

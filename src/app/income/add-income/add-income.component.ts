@@ -28,6 +28,7 @@ import { UtilService } from 'src/app/core/util/util.service';
 })
 export class AddIncomeComponent implements OnInit {
   date = new Date();
+  banks = ['Axis', 'Paytm'];
 
   constructor(
     private _adapter: DateAdapter<any>,

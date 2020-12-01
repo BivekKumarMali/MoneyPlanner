@@ -40,6 +40,18 @@
       </mat-form-field>
 
       <mat-form-field>
+        <mat-label>From</mat-label>
+        <mat-select name="source" #source="ngModel" ngModel required>
+          <mat-option *ngFor="let item of banks" [value]="item">
+            {{ item }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="source.hasError('required')">
+          Field must not be empty
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
         <mat-label>Date</mat-label>
         <input matInput [matDatepicker]="dp" [(value)]="date" name="date" />
         <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
