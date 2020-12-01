@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AssetComponent } from './asset/asset.component';
 import { AuthGuard } from './core/auth/auth.guard';
 import { ExpenseComponent } from './expense/expense.component';
 import { HomeComponent } from './home/home.component';
@@ -35,6 +36,14 @@ const routes: Routes = [
     data: { preload: false },
     loadChildren: () =>
       import('./expense/expense.module').then((m) => m.ExpenseModule),
+  },
+  {
+    path: 'asset',
+    component: AssetComponent,
+    canActivate: [AuthGuard],
+    data: { preload: false },
+    loadChildren: () =>
+      import('./asset/asset.module').then((m) => m.AssetModule),
   },
 ];
 

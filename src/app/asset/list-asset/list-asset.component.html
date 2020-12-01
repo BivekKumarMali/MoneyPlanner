@@ -1,0 +1,47 @@
+<app-filter (Filter)="NewFilter($event)"></app-filter>
+<div class="column">
+  <div class="rows">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Date</th>
+              <th scope="col">Category</th>
+              <th scope="col">Amount</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of listAsset; index as i">
+              <th scope="row">{{ i }}</th>
+              <td>{{ item.name }}</td>
+              <td>{{ item.date | date: "longDate" }}</td>
+              <td>{{ item.category }}</td>
+              <td>{{ item.amount }}</td>
+              <td>
+                <button mat-icon-button color="primary" class="btn">
+                  <mat-icon> edit </mat-icon>
+                </button>
+                <button mat-icon-button class="btn btn-outline-danger">
+                  <mat-icon> delete </mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-warning" *ngIf="listAsset">
+        <strong>Warning!</strong> No data available this month.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-button">
+  <button class="btn" mat-fab color="warn" [routerLink]="['add']">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
