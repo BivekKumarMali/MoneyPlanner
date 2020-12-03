@@ -1,11 +1,21 @@
 <div class="setup">
   <div class="select-section" *ngIf="!showSelect">
-    <select class="form-control" name="month" [(ngModel)]="filterMonth">
-      <option *ngFor="let item of listOfMonths; index as i" [value]="i">
+    <select
+      class="form-control"
+      name="month"
+      [(ngModel)]="filterMonth"
+      (change)="getValue()"
+    >
+      <option *ngFor="let item of listOfMonths; index as i" [value]="i + 1">
         {{ item }}
       </option>
     </select>
-    <select class="form-control" name="year" [(ngModel)]="filterYear">
+    <select
+      class="form-control"
+      name="year"
+      [(ngModel)]="filterYear"
+      (change)="getValue()"
+    >
       <option *ngFor="let item of listOfYear; index as i" [value]="item">
         {{ item }}
       </option>

@@ -16,13 +16,18 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of listAsset; index as i">
-              <th scope="row">{{ i }}</th>
+              <th scope="row">{{ i + 1 }}</th>
               <td>{{ item.name }}</td>
               <td>{{ item.date | date: "longDate" }}</td>
               <td>{{ item.category }}</td>
               <td>{{ item.amount }}</td>
               <td>
-                <button mat-icon-button color="primary" class="btn">
+                <button
+                  mat-icon-button
+                  color="primary"
+                  class="btn"
+                  [routerLink]="[item.id, 'edit']"
+                >
                   <mat-icon> edit </mat-icon>
                 </button>
                 <button mat-icon-button class="btn btn-outline-danger">
@@ -33,7 +38,7 @@
           </tbody>
         </table>
       </div>
-      <div class="alert alert-warning" *ngIf="listAsset">
+      <div class="alert alert-warning" *ngIf="!listAsset">
         <strong>Warning!</strong> No data available this month.
       </div>
     </div>

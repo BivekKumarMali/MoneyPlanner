@@ -34,7 +34,7 @@ export class EditAssetComponent implements OnInit {
     category: 'Necessity',
     date: new Date(),
     id: 'hehe',
-    month: 5,
+    month: '12/2020',
     name: 'Test',
   };
   categories = ['Saving', 'Necessity', 'Other'];

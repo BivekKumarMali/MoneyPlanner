@@ -12,8 +12,7 @@ import {
 } from '@angular/material/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilService } from 'src/app/core/util/util.service';
-import { IncomeDto } from 'src/app/interface/Dto/incomeDto';
-import { Income } from 'src/app/interface/models/income';
+import { Income } from 'src/app/models/income';
 
 @Component({
   selector: 'app-edit-income',

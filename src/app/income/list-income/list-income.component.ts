@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { IncomeDto } from 'src/app/interface/Dto/incomeDto';
+import { Income } from 'src/app/models/income';
 
 @Component({
   selector: 'app-list-income',
   templateUrl: './list-income.component.html',
-  styleUrls: ['./list-income.component.css']
+  styleUrls: ['./list-income.component.css'],
 })
 export class ListIncomeComponent implements OnInit {
+  listIncome: Income[];
 
-  listIncome: IncomeDto[];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   NewFilter(filter: string) {
     const filters = filter.split(' ');

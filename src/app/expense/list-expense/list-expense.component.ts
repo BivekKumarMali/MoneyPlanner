@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExpenseDto } from 'src/app/interface/Dto/expenseDto';
+import { Expense } from 'src/app/models/expense';
 
 @Component({
   selector: 'app-list-expense',
@@ -7,7 +7,7 @@ import { ExpenseDto } from 'src/app/interface/Dto/expenseDto';
   styleUrls: ['./list-expense.component.css'],
 })
 export class ListExpenseComponent implements OnInit {
-  listExpense: ExpenseDto[];
+  listExpense: Expense[];
 
   constructor() {}
 

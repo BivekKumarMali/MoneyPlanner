@@ -10,7 +10,10 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
+import { Router } from '@angular/router';
+import { AssetService } from 'src/app/core/api/asset/asset.service';
 import { UtilService } from 'src/app/core/util/util.service';
+import { Asset } from 'src/app/models/asset';
 
 @Component({
   selector: 'app-add-asset',
@@ -28,11 +31,14 @@ import { UtilService } from 'src/app/core/util/util.service';
 })
 export class AddAssetComponent implements OnInit {
   date = new Date();
-  categories = ['Saving', 'Necessity', 'Other'];
+  asset: Asset;
+  categories = ['Saving', 'Bank', 'Property', 'Others'];
 
   constructor(
     private _adapter: DateAdapter<any>,
-    private utilService: UtilService
+    private utilService: UtilService,
+    private assetService: AssetService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +46,12 @@ export class AddAssetComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
-    console.log(this.date);
+    this.asset = form.value;
+    this.asset.month = this.date.getMonth() + 1 + '/' + this.date.getFullYear();
+    this.asset.timestamp = this.date;
+    console.log(this.asset);
+
+    this.assetService.Add(this.asset);
+    this.router.navigate(['/asset']);
   }
 }

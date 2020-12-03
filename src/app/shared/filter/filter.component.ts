@@ -3,20 +3,31 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css']
+  styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent implements OnInit {
-
-  listOfMonths = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'];
+  listOfMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   listOfYear = [];
-  filterMonth = new Date().getMonth();
+  filterMonth = new Date().getMonth() + 1;
   filterYear = new Date().getFullYear();
   showSelect: boolean;
 
   @Output() Filter = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.setListOfYears();

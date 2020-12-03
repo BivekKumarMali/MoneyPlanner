@@ -3,6 +3,7 @@ export interface Asset {
   name: string;
   category: string;
   amount: number;
-  month: number;
+  month: string;
   date: Date;
+  timestamp?: object;
 }
