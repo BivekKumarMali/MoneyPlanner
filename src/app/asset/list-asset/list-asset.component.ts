@@ -29,8 +29,15 @@ export class ListAssetComponent implements OnInit, OnDestroy {
     const filters = filter.split(' ');
     console.log(filters);
   }
+  deleteAsset(id: string) {
+    this.assetService.delete(id);
+  }
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
+    this.assetService.subs.forEach((element) => {
+      element.unsubscribe();
+      console.log('working');
+    });
   }
 }

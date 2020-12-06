@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 
 import { NavComponent } from './nav/nav.component';
 import { FilterComponent } from './filter/filter.component';
+import { AuthService } from '../core/auth/auth.service';
+import { AuthGuard } from '../core/auth/auth.guard';
 
 @NgModule({
   declarations: [NavComponent, FilterComponent],
@@ -18,5 +20,6 @@ import { FilterComponent } from './filter/filter.component';
     RouterModule,
   ],
   exports: [NavComponent, FilterComponent],
+  providers: [AuthService, AuthGuard],
 })
 export class SharedModule {}

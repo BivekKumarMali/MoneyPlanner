@@ -30,7 +30,11 @@
                 >
                   <mat-icon> edit </mat-icon>
                 </button>
-                <button mat-icon-button class="btn btn-outline-danger">
+                <button
+                  mat-icon-button
+                  class="btn btn-outline-danger"
+                  (click)="deleteAsset(item.id)"
+                >
                   <mat-icon> delete </mat-icon>
                 </button>
               </td>

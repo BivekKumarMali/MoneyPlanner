@@ -12,7 +12,7 @@ import {
 } from '@angular/material/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilService } from 'src/app/core/util/util.service';
-import { Asset } from 'src/app/interface/models/asset';
+import { Asset } from 'src/app/models/asset';
 
 @Component({
   selector: 'app-edit-asset',

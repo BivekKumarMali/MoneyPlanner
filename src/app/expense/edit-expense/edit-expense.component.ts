@@ -12,7 +12,7 @@ import {
 } from '@angular/material/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilService } from 'src/app/core/util/util.service';
-import { Expense } from 'src/app/interface/models/expense';
+import { Expense } from 'src/app/models/expense';
 
 @Component({
   selector: 'app-edit-expense',
