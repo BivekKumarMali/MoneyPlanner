@@ -1,5 +1,5 @@
 <section fxLayout="column" fxLayoutAlign="center">
-  <button mat-icon-button class="btn" [routerLink]="['/income']">
+  <button mat-icon-button class="btn" [routerLink]="['/asset']">
     <mat-icon>arrow_back_ios</mat-icon> <span>Go Back</span>
   </button>
   <div class="card">
@@ -8,7 +8,7 @@
       fxLayout="column"
       fxLayoutAlign="center center"
       #form="ngForm"
-      (ngSubmit)="onSubmit(form)"
+      (ngSubmit)="onSubmit()"
     >
       <mat-form-field>
         <input
@@ -19,7 +19,7 @@
           name="name"
           required
           #sourceInput="ngModel"
-          [ngModel]="asset.name"
+          [(ngModel)]="asset.name"
         />
         <mat-error *ngIf="sourceInput.hasError('required')">
           Field must not be empty
@@ -34,7 +34,7 @@
           name="amount"
           required
           #amountInput="ngModel"
-          [ngModel]="asset.amount"
+          [(ngModel)]="asset.amount"
         />
         <mat-error *ngIf="amountInput.hasError('required')">
           Field must not be empty
@@ -47,7 +47,7 @@
           #category="ngModel"
           ngModel
           required
-          [ngModel]="asset.category"
+          [(ngModel)]="asset.category"
           name="category"
         >
           <mat-option *ngFor="let item of categories" [value]="item">

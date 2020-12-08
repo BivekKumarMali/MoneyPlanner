@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Expense } from 'src/app/interface/models/expense';
+import { Expense } from 'src/app/models/expense';
 
 @Injectable()
 export class ExpenseService {

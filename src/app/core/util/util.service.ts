@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   providedIn: 'root',
 })
 export class UtilService {
-  authState: firebase.default.User;
+  userId = '';
   constructor(private authAf: AngularFireAuth) {}
 
   SetDateFormat(_adapter: any) {
@@ -14,8 +14,10 @@ export class UtilService {
 
   GetUserID() {
     this.authAf.authState.subscribe((authState) => {
-      this.authState = authState;
+      this.userId = authState.uid;
     });
-    return this.authState.uid;
+    console.log(this.userId);
+
+    return this.userId;
   }
 }

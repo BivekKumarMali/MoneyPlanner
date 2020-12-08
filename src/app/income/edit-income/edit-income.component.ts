@@ -39,6 +39,7 @@ export class EditIncomeComponent implements OnInit {
     name: 'Promact',
     isregular: true,
     too: 'Axis',
+    uid: '',
   };
 
   constructor(

@@ -10,8 +10,8 @@ import { Subject } from 'rxjs';
 export class AuthService {
   authChange = new Subject<boolean>();
   userState: any;
+  userDetails: string = '';
   protected isAuthenticated: boolean;
-  authState: firebase.default.User;
   constructor(private authAf: AngularFireAuth, private router: Router) {}
 
   login(user: object) {
@@ -31,7 +31,6 @@ export class AuthService {
       // @ts-ignore
       .createUserWithEmailAndPassword(user.email, user.password)
       .then((result) => {
-        console.log(result);
         this.successfully();
       })
       .catch((error) => {
@@ -42,6 +41,7 @@ export class AuthService {
   logout() {
     this.authAf.signOut();
     this.isAuthenticated = false;
+    localStorage.removeItem('user');
     this.authChange.next(false);
     this.router.navigate(['/']);
   }
@@ -49,11 +49,8 @@ export class AuthService {
   signWithCerdentails(userState: any) {}
 
   isAuth() {
-    this.authAf.authState.subscribe((authState) => {
-      this.authState = authState;
-    });
-
-    if (this.authState) {
+    const user = localStorage.getItem('user');
+    if (user) {
       return true;
     } else {
       return false;
@@ -61,6 +58,10 @@ export class AuthService {
   }
   private successfully() {
     this.isAuthenticated = true;
+    this.authAf.authState.subscribe((authState) => {
+      this.userDetails = JSON.stringify(authState);
+    });
+    localStorage.setItem('user', JSON.stringify(this.userDetails));
     this.authChange.next(true);
     this.router.navigate(['/home']);
   }

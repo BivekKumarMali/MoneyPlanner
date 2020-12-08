@@ -5,5 +5,6 @@ export interface Income {
   amount: number;
   month: number;
   date: Date;
+  uid: string;
   isregular: boolean;
 }

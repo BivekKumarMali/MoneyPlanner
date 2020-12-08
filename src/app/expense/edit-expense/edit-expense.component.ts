@@ -38,6 +38,7 @@ export class EditExpenseComponent implements OnInit {
     source: 'Axis',
     category: 'Necessity',
     name: 'hello',
+    uid: '',
   };
   categories = ['Saving', 'Necessity', 'Other'];
   banks = ['Axis', 'Paytm'];

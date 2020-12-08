@@ -48,9 +48,8 @@ export class AddAssetComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.asset = form.value;
     this.asset.month = this.date.getMonth() + 1 + '/' + this.date.getFullYear();
-    this.asset.timestamp = this.date;
-    console.log(this.asset);
-
+    this.asset.date = this.date;
+    this.asset.uid = this.utilService.GetUserID();
     this.assetService.Add(this.asset);
     this.router.navigate(['/asset']);
   }

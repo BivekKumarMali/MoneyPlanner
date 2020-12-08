@@ -26,7 +26,7 @@
                   mat-icon-button
                   color="primary"
                   class="btn"
-                  [routerLink]="[item.id, 'edit']"
+                  (click)="editAsset(i)"
                 >
                   <mat-icon> edit </mat-icon>
                 </button>

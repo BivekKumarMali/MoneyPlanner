@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { UtilService } from 'src/app/core/util/util.service';
 
 @Component({
   selector: 'app-filter',
@@ -41,6 +42,6 @@ export class FilterComponent implements OnInit {
 
   getValue() {
     console.log(this.filterMonth, this.filterYear);
-    this.Filter.emit(this.filterMonth + ' ' + this.filterYear);
+    this.Filter.emit(this.filterMonth + '/' + this.filterYear);
   }
 }

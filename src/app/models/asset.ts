@@ -5,5 +5,5 @@ export interface Asset {
   amount: number;
   month: string;
   date: Date;
-  timestamp?: object;
+  uid: string;
 }

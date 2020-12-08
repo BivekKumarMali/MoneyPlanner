@@ -10,7 +10,8 @@ import {
   DateAdapter,
   MAT_DATE_FORMATS,
 } from '@angular/material/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AssetService } from 'src/app/core/api/asset/asset.service';
 import { UtilService } from 'src/app/core/util/util.service';
 import { Asset } from 'src/app/models/asset';
 
@@ -29,27 +30,33 @@ import { Asset } from 'src/app/models/asset';
   ],
 })
 export class EditAssetComponent implements OnInit {
-  asset: Asset = {
-    amount: 1000,
-    category: 'Necessity',
-    date: new Date(),
-    id: 'hehe',
-    month: '12/2020',
-    name: 'Test',
-  };
-  categories = ['Saving', 'Necessity', 'Other'];
+  asset: Asset;
+  categories = ['Saving', 'Bank', 'Property', 'Others'];
 
   constructor(
     private _adapter: DateAdapter<any>,
     private utilService: UtilService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private assetService: AssetService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.utilService.SetDateFormat(this._adapter);
-    const id = this.route.snapshot.paramMap.get('id');
+    // Later
+    /*const id = this.route.snapshot.paramMap.get('id');
+    if (id != null) {
+      this.assetService.Update(id);
+    } else {
+      console.log('Redirect to PageNotFound');
+    }*/
+    this.asset = this.assetService.assetToEdit;
   }
-  onSubmit(form: NgForm) {
-    console.log(form.value);
+  onSubmit() {
+    this.asset.date = new Date(this.asset.date);
+    this.asset.month =
+      this.asset.date.getMonth() + 1 + '/' + this.asset.date.getFullYear();
+    this.assetService.Update(this.asset);
+    this.router.navigate(['/asset']);
   }
 }
